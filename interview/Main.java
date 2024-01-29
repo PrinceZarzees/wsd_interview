@@ -88,6 +88,7 @@ public class Main {
                     System.out.println("Account created successfully");
                     break;
                 case 2:
+                    // show all accounts
                     bank.printAccounts();
                     break;
                 case 3:
