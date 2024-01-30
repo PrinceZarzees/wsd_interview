@@ -32,7 +32,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter your account name: ");
+                    System.out.print("Enter your account name (should not contain any space): ");
                     String name = sc.next();
                     String number;
 
