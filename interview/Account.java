@@ -16,19 +16,22 @@ class Account {
         this.number = number;
     }
 
-    public void deposit(double amount) {
+    public Boolean deposit(double amount) {
         double tmp = balance;
         tmp += amount;
         balance = tmp;
+        return true;
     }
 
-    public void withdraw(double amount) {
+    public Boolean withdraw(double amount) {
         double tmp = getBalance();
         if (tmp - amount < minBalance) {
             System.out.println("Minimum balance exceeded");
+            return false;
         } else {
             tmp -= amount;
             setBalance(tmp);
+            return true;
         }
     }
 

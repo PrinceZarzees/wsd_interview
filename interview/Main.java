@@ -32,7 +32,7 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter your name: ");
+                    System.out.print("Enter your account name: ");
                     String name = sc.next();
                     String number;
 
@@ -45,12 +45,16 @@ public class Main {
                         }
 
                     }
-                    System.out.print("Enter your account type: ");
+                    System.out.print("Enter your account type(savings,current,salary,checking): ");
                     String type = sc.next();
                     System.out.print("Enter your account balance: ");
                     double balance = sc.nextDouble();
 
                     if (type.equals("savings")) {
+                        if (balance < SavingsAccount.openBalance) {
+                            System.out.println("Minimum balance for savings account is " + SavingsAccount.openBalance);
+                            break;
+                        }
                         account = new SavingsAccount(name, balance, number);
 
                     } else if (type.equals("current")) {
@@ -67,7 +71,6 @@ public class Main {
                         }
 
                         account = new SalaryAccount(name, balance, number);
-                        
 
                     } else if (type.equals("checking")) {
                         if (balance < CheckingAccount.openBalance) {
@@ -92,7 +95,7 @@ public class Main {
                     bank.printAccounts();
                     break;
                 case 3:
-                    System.out.print("Enter your name: ");
+                    System.out.print("Enter your account name: ");
                     name = sc.next();
                     System.out.print("Enter your account number: ");
                     number = sc.next();
@@ -111,7 +114,7 @@ public class Main {
                     System.out.println("Account updated successfully");
                     break;
                 case 4:
-                    System.out.print("Enter your name: ");
+                    System.out.print("Enter your account name: ");
                     name = sc.next();
                     System.out.print("Enter your account number: ");
                     number = sc.next();
@@ -125,7 +128,7 @@ public class Main {
                     System.out.println("Account deleted successfully");
                     break;
                 case 5:
-                    System.out.print("Enter your name: ");
+                    System.out.print("Enter your account name: ");
                     name = sc.next();
                     System.out.print("Enter your account number: ");
                     number = sc.next();
@@ -136,11 +139,14 @@ public class Main {
                     }
                     System.out.print("Enter the amount to be deposited: ");
                     double amount = sc.nextDouble();
-                    account.deposit(amount);
+                    if (account.deposit(amount)) {
+                        account.setlastUpDated(new Date());
+                        System.out.println("Amount " + amount + " deposited successfully");
+                    }
                     System.out.println(account);
                     break;
                 case 6:
-                    System.out.print("Enter your name: ");
+                    System.out.print("Enter your account name: ");
                     name = sc.next();
                     System.out.print("Enter your account number: ");
                     number = sc.next();
@@ -151,11 +157,14 @@ public class Main {
                     }
                     System.out.print("Enter the amount to be withdrawn: ");
                     amount = sc.nextDouble();
-                    account.withdraw(amount);
+                    if (account.withdraw(amount)) {
+                        account.setlastUpDated(new Date());
+                        System.out.println("Amount " + amount + " withdrawn successfully");
+                    }
                     System.out.println(account);
                     break;
                 case 7:
-                    System.out.print("Enter your name: ");
+                    System.out.print("Enter your account name: ");
                     name = sc.next();
                     System.out.print("Enter your account number: ");
                     number = sc.next();
