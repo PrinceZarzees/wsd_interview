@@ -32,8 +32,15 @@ public class Main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter your account name (should not contain any space): ");
-                    String name = sc.next();
+                    System.out.print("Enter your account name: ");
+                    String temp = sc.nextLine();
+                    temp=sc.nextLine();
+                    String[] stream=temp.split(" ");
+                    String name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
+
                     String number;
 
                     Account account = null;
@@ -96,7 +103,14 @@ public class Main {
                     break;
                 case 3:
                     System.out.print("Enter your account name: ");
-                    name = sc.next();
+                    // name = sc.next();
+                    temp = sc.nextLine();
+                    temp = sc.nextLine();
+                    stream=temp.split(" ");
+                    name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
                     System.out.print("Enter your account number: ");
                     number = sc.next();
 
@@ -107,7 +121,15 @@ public class Main {
                     }
 
                     System.out.print("Enter your new account name: ");
-                    name = sc.next();
+                    // name = sc.next();
+                    temp = sc.nextLine();
+                    temp = sc.nextLine();
+                    stream=temp.split(" ");
+                    name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
+                    
                     account.setName(name);
 
                     account.setlastUpDated(new Date());
@@ -115,7 +137,14 @@ public class Main {
                     break;
                 case 4:
                     System.out.print("Enter your account name: ");
-                    name = sc.next();
+                    // name = sc.next();
+                    temp = sc.nextLine();
+                    temp = sc.nextLine();
+                    stream=temp.split(" ");
+                    name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
                     System.out.print("Enter your account number: ");
                     number = sc.next();
 
@@ -129,7 +158,14 @@ public class Main {
                     break;
                 case 5:
                     System.out.print("Enter your account name: ");
-                    name = sc.next();
+                    // name = sc.next();
+                    temp = sc.nextLine();
+                    temp = sc.nextLine();
+                    stream=temp.split(" ");
+                    name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
                     System.out.print("Enter your account number: ");
                     number = sc.next();
                     account = bank.getAccount(name, number);
@@ -147,7 +183,14 @@ public class Main {
                     break;
                 case 6:
                     System.out.print("Enter your account name: ");
-                    name = sc.next();
+                    // name = sc.next();
+                    temp = sc.nextLine();
+                    temp = sc.nextLine();
+                    stream=temp.split(" ");
+                    name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
                     System.out.print("Enter your account number: ");
                     number = sc.next();
                     account = bank.getAccount(name, number);
@@ -165,7 +208,14 @@ public class Main {
                     break;
                 case 7:
                     System.out.print("Enter your account name: ");
-                    name = sc.next();
+                    // name = sc.next();
+                    temp = sc.nextLine();
+                    temp = sc.nextLine();
+                    stream=temp.split(" ");
+                    name=stream[0];
+                    for (int i=1;i<stream.length;i++){
+                        name=name+" "+stream[i];
+                    }
                     System.out.print("Enter your account number: ");
                     number = sc.next();
                     account = bank.getAccount(name, number);
